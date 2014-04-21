@@ -31,7 +31,7 @@ var k = new Kickass()
   error  {error} => An Error object representing the error encountered
   data    {array} => An array of Torrent.
   */
-  if (! errors.length > 0) {
+  if (error === null) {
     // No errors occured.
     console.log(data.length, "results");
     console.log(
