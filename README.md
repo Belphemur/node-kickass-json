@@ -25,23 +25,22 @@ var Kickass = require('node-kickass-json');
 
 var k = new Kickass()
 .setQuery('Almost Human')   // Set search Query parameter
-.run(function(errors, data) {
+.run(function(error, data) {
   /*
   this  {context} => Current Context is set to be `k`.
-  errors  {array} => An array of errors that occured.
-  data    {array} => An array of items/articles that were read.
+  error  {error} => An Error object representing the error encountered
+  data    {array} => An array of Torrent.
   */
   if (! errors.length > 0) {
     // No errors occured.
     console.log(data.length, "results");
     console.log(
-      errors,     // Array of errors, will be empty array given there are no errors.
-      data,       // Array of items/articles read from this `run`.
-      this.items  // Array of all items/articles read that have been associated to `k`, which is the current context `this`.
+      errors,     // Error object, will be null if no error
+      data       // Array of Torrent read from this `run`.
       );
   } else {
-    // One or more errors occured.
-    console.log(errors, "errors");
+    // An error occurred.
+    console.log(error, "error");
   }
 })
 
@@ -69,13 +68,10 @@ k.setSort({
 
 - `run`
 ```javascript
-k.run(function(errors, data) {
+k.run(function(error, data) {
             //console.log(data);
-            if (! errors.length > 0) {
-                done();
-                //console.log(data.length);
-            } else {
-                //console.log(errors);
+            if (error === null && data !== null) {
+                    done();
             }
         });
 ```

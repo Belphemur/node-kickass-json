@@ -16,7 +16,7 @@
     "kickass",
     "torrent"
   ],
-  "author": "Antoine Aflalo <antoineaf@admincmd.com>",
+  "author": "Antoine Aflalo <antoineaf+npm@admincmd.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Belphemur/node-kickass-json/issues"
