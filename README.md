@@ -1,30 +1,30 @@
-node-kickass [![NPM version](https://badge.fury.io/js/node-kickass.png)](http://badge.fury.io/js/node-kickass) [![Build Status](https://travis-ci.org/Glavin001/node-kickass.png?branch=master)](https://travis-ci.org/Glavin001/node-kickass)
+node-kickass-json [![NPM version](https://badge.fury.io/js/node-kickass-json.png)](http://badge.fury.io/js/node-kickass-json) [![Build Status](https://travis-ci.org/Belphemur/node-kickass-json.png?branch=master)](https://travis-ci.org/Belphemur/node-kickass-json)
 ============
 
-[![NPM](https://nodei.co/npm/node-kickass.png?downloads=true&stars=true)](https://nodei.co/npm/node-kickass/)
+[![NPM](https://nodei.co/npm/node-kickass-json.png?downloads=true&stars=true)](https://nodei.co/npm/node-kickass-json/)
 
 > Query for torrents at Kickass.to with Node.js.
 
 ## Installation
-Add `node-kickass` to your existing Node.js project.
+Add `node-kickass-json` to your existing Node.js project.
 ```bash
-npm install node-kickass --save
+npm install node-kickass-json --save
 ```
 
 ## Usage
 
-See [examples](https://github.com/Glavin001/node-kickass/tree/master/examples) for more usage details.
+See [examples](https://github.com/Belphemur/node-kickass-json/tree/master/examples) for more usage details.
 
 Built as a [Fluent Interface](http://en.wikipedia.org/wiki/Fluent_interface).
 Also known as [method chaining](http://en.wikipedia.org/wiki/Method_chaining#jQuery), 
 as used in [jQuery](http://jquery.com/).
+Fork of [node-kickass](https://github.com/Glavin001/node-kickass) by @Glavin001
 
 ```javascript
-var Kickass = require('node-kickass');
+var Kickass = require('node-kickass-json');
 
 var k = new Kickass()
 .setQuery('Almost Human')   // Set search Query parameter 
-.setPage(0)                 // Optional
 .run(function(errors, data) {
   /*
   this  {context} => Current Context is set to be `k`.
@@ -59,11 +59,6 @@ var k = new Kickass()
 k.setQuery("Search Name")
 ```
 
-- `setPage`
-```javascript
-k.setPage(0)
-```
-
 - `setSort`
 ```javascript
 k.setSort({
@@ -83,12 +78,6 @@ k.run(function(errors, data) {
                 //console.log(errors);
             }
         });
-```
-
-- `wait` (FIXME)
-Waits for all requests to be completed.
-```javascript
-k.wait()
 ```
 
 -----
