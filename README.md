@@ -24,7 +24,7 @@ Fork of [node-kickass](https://github.com/Glavin001/node-kickass) by @Glavin001
 var Kickass = require('node-kickass-json');
 
 var k = new Kickass()
-.setQuery('Almost Human')   // Set search Query parameter 
+.setQuery('Almost Human')   // Set search Query parameter
 .run(function(errors, data) {
   /*
   this  {context} => Current Context is set to be `k`.
